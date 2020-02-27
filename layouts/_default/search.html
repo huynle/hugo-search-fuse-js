@@ -1,29 +1,25 @@
 {{ define "main" }} <!-- https://gist.github.com/eddiewebb/735feb48f50f0ddd65ae5606a1cb41ae -->
 
-<div class="search">
-  <!--<header>-->
-  <!--  <h1>{{ .Title }}</h1>-->
-  <!--  {{/* partial "debugprint.html" (site.GetPage "/search") */}}-->
-  <!--</header>-->
+<section class="main search">
+  <div class="content">
+    <div id="search-results"></div>
+  </div>
+</section>
 
-  <!--<form action="{{ .Permalink }}">-->
-  <!--  <input id="search-query" name="q"/>-->
-  <!--</form>-->
-  <!--<hr />-->
-
-  <div id="search-results"></div>
-</div>
-
-<template id="search-result-template"><div class="search_summary">
-  <h2 class="post-title no-text-decoration"><a class="search_link search_title" href=""></a></h2>
-  <p><em class="search_snippet"></em></p>
-  <small>
-    <table>
-      <tr class="search_iftags"><td><strong>Tags</strong></td><td class="search_tags"></td></tr>
-      <tr class="search_ifcategories"><td><strong>Categories</strong></td><td class="search_categories"></td></tr>
-    </table>
-  </small>
-  </div></template>
+<template id="search-result-template">
+  <div class="search_summary article">
+  <h1 class="post-title name">
+    <a class="search_link search_title" href=""></a>
+  </h1>
+  <div class="search_snippet"></div>
+      <span class="search_iftags extra">
+        <p>Tags: <a class="search_tags"></a></p>
+      </span>
+      <span class="search_ifcategories extra">
+        <p>Categories: <a class="search_categories"></a></p>
+      </span>
+  </div>
+</template>
 {{ end }}
 
 {{ define "footer" }}
